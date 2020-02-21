@@ -1,0 +1,13 @@
+{
+  "name": "hapi",
+  "version": "1.0.0",
+  "main": "api.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "pug": "^2.0.4",
+    "unsplash-js": "^6.0.0"
+  }
+}

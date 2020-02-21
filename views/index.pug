@@ -1,0 +1,32 @@
+html
+    head
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title #{searchText ? `${searchText} | Keplar` : "Keplar - An Unsplash Photo Browser" }
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Pacifico|Material+Icons&display=swap")
+        link(rel="stylesheet", href="/vendor/css/materialize.min.css")
+        link(rel="stylesheet", href="/vendor/css/animate.css")
+        link(rel="stylesheet", href="/styles/main.css")
+
+    body
+        .nav
+            .nav-content
+                .logo
+                    a(href="/")
+                        img(src="/imgs/logo.png", alt="logo")
+                .search#searchContainer
+                    input(type="search", aria-controls="suggestions", placeholder="Search images from Unsplash.com", value=searchText ? searchText : "")#search
+                    .assist-logo
+                        i.material-icons search
+                    ul.search-suggestions.hide.animated.fadeIn#suggestions
+        .container
+            .row
+                each picture in data.results
+                    .picture.col.s12.m6.l4
+                        a(href="https://unsplash.com/photos/" + picture.id, target="_blank")
+                            .image(style={"background-image": `url(` + picture.urls.small + `)`})
+                            .text
+                                h3 #{picture.description != null ? picture.description : picture.alt_description}
+
+        script(src="/vendor/js/materialize.min.js")
+        script(src="/vendor/js/axios.min.js")
+        script(src="/js/controllers.js")
