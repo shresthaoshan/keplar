@@ -95,6 +95,7 @@ input[type=search]::-o-placeholder {
     position: absolute;
     right: 10px;
     top: 13px;
+    cursor: pointer;
 }
 .search ul.search-suggestions {
     width: 100%;

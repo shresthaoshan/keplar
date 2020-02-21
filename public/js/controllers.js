@@ -46,8 +46,14 @@ const goToSearch = e => {
             window.location.assign('/' + el.value)
     }
 }
-
+const goToSearchMobile = e => {
+    let el = document.getElementById('search')
+    if (el.value)
+        window.location.assign('/' + el.value)
+}
 document.getElementById('search').addEventListener("keyup", requestServer)
 document.getElementById('search').addEventListener("keyup", goToSearch)
+document.getElementById('search-icon').addEventListener("click", goToSearchMobile)
+document.getElementById('search-icon').addEventListener("touchstart", goToSearchMobile)
 
 document.getElementById('search').addEventListener("focus", () => suggestions ? document.getElementById("suggestions").classList.remove("hide") : 0)
