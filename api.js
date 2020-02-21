@@ -51,4 +51,4 @@ app.post('/api/search-suggestions', (req, res) => {
 })
 
 
-app.listen(3000, () => console.log("Server live"))
+app.listen(process.env.NODE_ENV == 'production' ? 80 : 3000, () => console.log("Server live"))
