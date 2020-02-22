@@ -21,11 +21,12 @@ app.use(express.static('public'))
 let dat = ['dogs', 'doctor', 'dominos', 'people', 'pizza', 'purse', 'panorama']
 
 app.get('/', async (req, res) => {
-  unsplash.search.photos("puppies", 1, 12, { orientation: "portrait" })
-  .then(res=>res.json())
-  .then(json => {
-    res.render('index', {"data" : json})
-  });
+  // unsplash.search.photos("puppies", 1, 12, { orientation: "portrait" })
+  // .then(res=>res.json())
+  // .then(json => {
+  //   res.render('index', {"data" : json})
+  // });
+    res.render('index', {"data" : null})
 })
 
 app.get('/api', (req, res) => {
@@ -36,6 +37,10 @@ app.get('/api', (req, res) => {
   });
 })
 
+app.get('/disclaimer', (req, res) => {
+  res.render('disclaimer')
+})
+
 app.get('/:search', (req, res) => {
   let searchItem = req.params.search.toLowerCase()
   if (searchItem != 'favicon.ico' && !(dat.includes(searchItem))) {
@@ -44,7 +49,8 @@ app.get('/:search', (req, res) => {
   unsplash.search.photos(searchItem, 1, 12, { orientation: "portrait" })
   .then(res=>res.json())
   .then(json => {
-    res.render('index', {"data" : json, "searchText": searchItem})
+    if (json.results.length > 0) res.render('index', {"data" : json, "searchText": searchItem})
+    else res.render('index', {"data": null, "searchText": searchItem})
   });
 })
 

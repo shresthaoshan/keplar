@@ -1,0 +1,71 @@
+doctype html
+html
+    head
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title Disclaimer | Keplar
+        
+        include ./parts/favicon.pug
+
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Pacifico|Material+Icons|Noto+Serif+TC|Raleway|ZCOOL+XiaoWei&display=swap")
+        link(rel="stylesheet", href="/vendor/css/materialize.min.css")
+        link(rel="stylesheet", href="/vendor/css/animate.css")
+        link(rel="stylesheet", href="/styles/main.css")
+
+    body
+        .nav
+            .nav-content
+                .logo
+                    a(href="/", title="Keplar - An Unsplash Photo Browser")
+                        img(src="/imgs/logo.png", alt="logo")
+                .search#searchContainer
+                    input(type="search", aria-controls="suggestions", autocapitalize="off", autocomplete="off", placeholder="Search images from Unsplash.com", value=searchText ? searchText : "")#search
+                    .assist-logo
+                        i.material-icons#search-icon search
+                    ul.search-suggestions.hide.animated.fadeIn#suggestions
+        .container
+            .disclaimer
+                h3 Disclaimer
+                h6
+                    | I, (
+                    b "Oshan Shrestha", "Keplar", "We", "Us"
+                    | ), do not own rights to any of the media content found on this site except for the site-logo and the site-name.
+                    br
+                    | All media content available through this site is the courtesy of 
+                    b Unsplash.com 
+                    | and 
+                    b Unsplash Developer Api
+                    | .
+                h6
+                    | This site 
+                    b complies 
+                    | with the terms indicated at 
+                    a(href="https://unsplash.com/api-terms") API Terms 
+                    | for the use of API.
+                    br
+                    | Therefore request 
+                    b visitors 
+                    | of this site to follow the guidelines set by Unsplash Inc. for the use of assets that can be available through this site.
+                h6
+                    | Also, 
+                    b Unsplash.com 
+                    | will be responsible for any type of effect of consequence resulted by the content found through this site & 
+                    b will be accountable 
+                    | for any kind of aftermath therefore produced.
+
+                br
+                br
+                
+                ul
+                    li
+                        a(href="https://unsplash.com/license") License of Unsplash.com
+                    li
+                        a(href="https://unsplash.com/privacy") Privacy Policies of Unsplash.com
+                    li
+                        a(href="https://unsplash.com/terms") Terms &amp; Conditions of Unsplash.com
+                    li
+                        a(href="https://unsplash.com/api-terms") API Terms of Unsplash.com
+
+
+        script(src="/vendor/js/materialize.min.js")
+        script(src="/vendor/js/axios.min.js")
+        script(src="/js/controllers.js")
