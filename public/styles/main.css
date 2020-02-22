@@ -216,3 +216,22 @@ ul.search-suggestions li a {
 .info i.material-icons {
     color: rgba(40, 40, 40, 0.45);
 }
+.no-results {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.55);
+}
+.no-results .messages {
+    text-align: center;
+}
+.messages h6 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.messages p {
+    margin-top: 5px;
+}

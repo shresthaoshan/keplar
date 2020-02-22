@@ -1,6 +1,5 @@
 let suggestions = false
 const requestServer = e => {
-    console.log(e.key)
     let el = document.getElementById('search')
     let ul = document.getElementById("suggestions")
     let searchValue = el.value
@@ -31,7 +30,6 @@ const requestServer = e => {
                 li.classList.add("no-suggestion")
                 ul.appendChild(li)
             }
-            console.log(response)
         })
         .catch(err => console.log(err))
     } else {
@@ -57,7 +55,7 @@ const showInfo = e => {
     e.path[2].children[0].children[1].classList.toggle("opaque")
 }
 
-document.getElementById("info").addEventListener("click", showInfo)
+// document.getElementById("info").addEventListener("click", showInfo)
 document.getElementById('search').addEventListener("keyup", requestServer)
 document.getElementById('search').addEventListener("keyup", goToSearch)
 document.getElementById('search-icon').addEventListener("click", goToSearchMobile)
