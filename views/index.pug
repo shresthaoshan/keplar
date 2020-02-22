@@ -23,40 +23,42 @@ html
                         i.material-icons#search-icon search
                     ul.search-suggestions.hide.animated.fadeIn#suggestions
         .container
-            .row
                 if (data != null)
-                    each picture in data.results
-                        .picture.col.s12.m6.l4
-                            a(href="https://unsplash.com/photos/" + picture.id, target="_blank")
-                                .image(style={"background-image": `url(` + picture.urls.small + `)`})
-                                .text
-                                    h3 #{picture.description != null ? picture.description : picture.alt_description}
-                                a(href="https://unsplash.com/@" + picture.user.username, target="_blank")
-                                    .user
-                                        .dp
-                                            img(src=picture.user.profile_image.small, alt=picture.user.username)
-                                        .valign-wrapper.name
-                                            p #{picture.user.name}
-                                .info.hide-on-large-only#info
-                                    i.material-icons info
+                    .row
+                        each picture in data.results
+                            .picture.col.s12.m6.l4
+                                a(href="https://unsplash.com/photos/" + picture.id, target="_blank")
+                                    .image(style={"background-image": `url(` + picture.urls.small + `)`})
+                                    .text
+                                        h3 #{picture.description != null ? picture.description : picture.alt_description}
+                                    a(href="https://unsplash.com/@" + picture.user.username, target="_blank")
+                                        .user
+                                            .dp
+                                                img(src=picture.user.profile_image.small, alt=picture.user.username)
+                                            .valign-wrapper.name
+                                                p #{picture.user.name}
+                                    .info.hide-on-large-only#info
+                                        i.material-icons info
                     include ./parts/footer.pug
                 else
                     if (searchText)
-                        .col.s12.valign-wrapper.no-results
-                            .messages
-                                h6 Sorry, no results found.
-                                p Maybe, you could try again with different keyword.
+                        .row
+                            .col.s12.valign-wrapper.no-results
+                                .messages
+                                    h6 Sorry, no results found.
+                                    p Maybe, you could try again with different keyword.
                         include ./parts/footer.pug
                     else
-                        .col.s12.home-page
-                            .home-content
-                                h1 Keplar
-                                h5 An Unsplash Photo Browser
-                                p
-                                    | &copy; #{(new Date()).getFullYear()} 
-                                    a(href="//oshanshrestha.com.np") Oshan Shrestha 
-                                    | |  
-                                    a(href="/disclaimer") Disclaimer
+                        .row
+                            .col.s12.home-page
+                                .home-content
+                                    h1 Keplar
+                                    h5 An Unsplash Photo Browser
+                                    p
+                                        | &copy; #{(new Date()).getFullYear()} 
+                                        a(href="//oshanshrestha.com.np") Oshan Shrestha 
+                                        | |  
+                                        a(href="/disclaimer") Disclaimer
 
 
         script(src="/vendor/js/materialize.min.js")
