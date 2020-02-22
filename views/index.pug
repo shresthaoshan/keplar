@@ -21,7 +21,7 @@ html
         meta(name='msapplication-TileImage' content='/ms-icon-144x144.png')
         meta(name='theme-color' content='#ffffff')
 
-        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Pacifico|Material+Icons&display=swap")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Pacifico|Material+Icons|Raleway&display=swap")
         link(rel="stylesheet", href="/vendor/css/materialize.min.css")
         link(rel="stylesheet", href="/vendor/css/animate.css")
         link(rel="stylesheet", href="/styles/main.css")
@@ -45,6 +45,12 @@ html
                             .image(style={"background-image": `url(` + picture.urls.small + `)`})
                             .text
                                 h3 #{picture.description != null ? picture.description : picture.alt_description}
+                            a(href="https://unsplash.com/@" + picture.user.username, target="_blank")
+                                .user
+                                    .dp
+                                        img(src=picture.user.profile_image.small, alt=picture.user.username)
+                                    .valign-wrapper.name
+                                        p #{picture.user.name}
 
         script(src="/vendor/js/materialize.min.js")
         script(src="/vendor/js/axios.min.js")

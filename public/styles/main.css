@@ -137,7 +137,7 @@ ul.search-suggestions li a {
     width: 100%;
 }
 .picture {
-    height: 350px;
+    height: 500px;
     margin-bottom: 25px;
     overflow: hidden;
     position: relative;
@@ -204,3 +204,40 @@ ul.search-suggestions li a {
     border-bottom: 1.5px solid #333;
     border-right: 1.5px solid #333;
 } */
+
+
+
+.picture .user {
+    /* width: calc(100% - 40px); */
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    opacity: 0;
+    transition: 0.15s ease-in;
+    color: #333;
+}
+.picture:hover .user {
+    opacity: 1;
+}
+.dp {
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid rgba(40, 40, 40, 0.25);
+}
+.dp img {
+    width: 100%;
+    height: auto;
+}
+.name {
+    margin-left: 10px;
+}
+.name p {
+    margin: 0;
+    font-weight: 900;
+}

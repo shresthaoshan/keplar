@@ -28,6 +28,14 @@ app.get('/', async (req, res) => {
   });
 })
 
+app.get('/api', (req, res) => {
+  unsplash.search.photos("puppies", 1, 12, { orientation: "portrait" })
+  .then(res=>res.json())
+  .then(json => {
+    res.json(json)
+  });
+})
+
 app.get('/:search', (req, res) => {
   let searchItem = req.params.search.toLowerCase()
   if (searchItem != 'favicon.ico' && !(dat.includes(searchItem))) {
@@ -49,6 +57,7 @@ app.post('/api/search-suggestions', (req, res) => {
   })
   res.json({suggestions: matchedData})
 })
+
 
 
 app.listen(process.env.NODE_ENV == 'production' ? 80 : 3000, () => console.log("Server live"))
