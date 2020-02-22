@@ -135,18 +135,20 @@ ul.search-suggestions li a {
 }
 .row {
     width: 100%;
+    padding: 0 0.75rem;
 }
 .picture {
     height: 500px;
     margin-bottom: 25px;
     overflow: hidden;
     position: relative;
+    padding: 0 !important;
 }
 .picture .text {
     position: absolute;
     top: 0;
-    left: 0.75rem;
-    width: calc(100% - 1.5rem);
+    left: 0rem;
+    width: calc(100% - 0rem);
     height: 100%;
     padding: 15px;
     color: #333;
@@ -173,45 +175,11 @@ ul.search-suggestions li a {
     position: relative;
     border-radius: 20px;
 }
-/* .picture .image::before, .picture .image::after {
-    content: " ";
-    position: absolute;
-    width: calc(100% - 50px);
-    height: calc(100% - 50px);
-    transition: 0.15s ease-out;
-}
-.picture .image::before {
-    top: 0px;
-    left: 0px;
-    border-top: 1.5px solid #3330;
-    border-left: 1.5px solid #3330;
-}
-.picture:hover .image::before {
-    top: 20px;
-    left: 20px;
-    border-top: 1.5px solid #333;
-    border-left: 1.5px solid #333;
-}
-.picture .image::after {
-    bottom: 0px;
-    right: 0px;
-    border-bottom: 1.5px solid #3330;
-    border-right: 1.5px solid #3330;
-}
-.picture:hover .image::after {
-    bottom: 20px;
-    right: 20px;
-    border-bottom: 1.5px solid #333;
-    border-right: 1.5px solid #333;
-} */
-
-
-
 .picture .user {
     /* width: calc(100% - 40px); */
     position: absolute;
     bottom: 20px;
-    left: 30px;
+    left: 20px;
     font-family: 'Raleway', sans-serif;
     display: flex;
     flex-direction: row;
@@ -240,4 +208,12 @@ ul.search-suggestions li a {
 .name p {
     margin: 0;
     font-weight: 900;
+}
+.info {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.info i.material-icons {
+    color: rgba(40, 40, 40, 0.45);
 }

@@ -51,6 +51,13 @@ const goToSearchMobile = e => {
     if (el.value)
         window.location.assign('/' + el.value)
 }
+
+const showInfo = e => {
+    e.preventDefault()
+    e.path[2].children[0].children[1].classList.toggle("opaque")
+}
+
+document.getElementById("info").addEventListener("click", showInfo)
 document.getElementById('search').addEventListener("keyup", requestServer)
 document.getElementById('search').addEventListener("keyup", goToSearch)
 document.getElementById('search-icon').addEventListener("click", goToSearchMobile)
