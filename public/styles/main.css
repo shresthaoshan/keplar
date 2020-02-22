@@ -135,20 +135,19 @@ ul.search-suggestions li a {
 }
 .row {
     width: 100%;
-    padding: 0 0.75rem;
+    /* padding: 0 0.75rem; */
 }
 .picture {
     height: 500px;
     margin-bottom: 25px;
     overflow: hidden;
     position: relative;
-    padding: 0 !important;
 }
 .picture .text {
     position: absolute;
     top: 0;
-    left: 0rem;
-    width: calc(100% - 0rem);
+    left: 0.75rem;
+    width: calc(100% - 1.5rem);
     height: 100%;
     padding: 15px;
     color: #333;
@@ -214,8 +213,6 @@ ul.search-suggestions li a {
     bottom: 20px;
     right: 20px;
 }
-
-
 .info i.material-icons {
     color: rgba(40, 40, 40, 0.45);
 }
