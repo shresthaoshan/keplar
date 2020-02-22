@@ -11,10 +11,10 @@ html
         .nav
             .nav-content
                 .logo
-                    a(href="/")
+                    a(href="/", title="Keplar - An Unsplash Photo Browser")
                         img(src="/imgs/logo.png", alt="logo")
                 .search#searchContainer
-                    input(type="search", aria-controls="suggestions", placeholder="Search images from Unsplash.com", value=searchText ? searchText : "")#search
+                    input(type="search", aria-controls="suggestions", autocapitalize="off", autocomplete="off", placeholder="Search images from Unsplash.com", value=searchText ? searchText : "")#search
                     .assist-logo
                         i.material-icons#search-icon search
                     ul.search-suggestions.hide.animated.fadeIn#suggestions
